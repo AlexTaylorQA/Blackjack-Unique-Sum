@@ -12,10 +12,14 @@ object Main
     var b = 2
     var c = 3
 
+    // Blackjack
     println(blackjack(x, y) + " is the highest score.")
 
+    // UniqueSum
     println("The total sum is " + uniqueSum(a,b,c) + ".")
 
+    // TooHot
+    println(tooHot(70, false))
   }
 
   def blackjack (int1: Int, int2: Int): Int =
@@ -58,11 +62,15 @@ object Main
         }
       }
     }
-
-
-
-
   }
 
+  def tooHot(temperature: Int, isSummer: Boolean): Boolean =
+  {
+    (temperature, isSummer) match
+    {
+      case(temperature, isSummer) if(temperature >= 60 && temperature <= (if(isSummer) 100 else 90)) => true
+      case _ => false
+    }
+  }
 
 }
